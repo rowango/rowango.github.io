@@ -1,0 +1,237 @@
+/* ── Google Fonts loaded in HTML ── */
+
+/* ── CSS Variables: warm color scheme ── */
+:root {
+  --bg:        #fdf6ee;
+  --surface:   #fff9f2;
+  --accent:    #a0522d;   /* sienna */
+  --accent2:   #c8813a;   /* warm amber */
+  --text:      #3b2a1a;
+  --muted:     #7a6252;
+  --border:    #e8d5c0;
+  --shadow:    rgba(100, 60, 20, 0.10);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* ── Typography ── */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent2);
+  margin-bottom: 0.75rem;
+}
+
+p { margin-bottom: 1rem; color: var(--text); }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+a:hover {
+  color: var(--accent2);
+  border-bottom-color: var(--accent2);
+}
+
+/* ── Header & Nav ── */
+header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+nav {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.site-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Main Layout ── */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Hero Section ── */
+.hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* ── Cards ── */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 3px 12px var(--shadow);
+}
+
+/* ── Intro two-column layout ── */
+.intro-text { flex: 1; }
+
+.intro-image {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .intro.card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
+/* ── Images ── */
+img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.caption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* ── Gallery intro two-column ── */
+.gallery-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-intro {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .gallery-intro img { max-width: 280px; }
+}
+
+/* ── Piece Lists ── */
+.piece-list {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.piece-list li {
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+.piece-list strong {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ── Contact ── */
+.contact-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.contact-links li {
+  font-size: 0.97rem;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
